@@ -21,7 +21,7 @@ class SpacyRecognizer(LocalRecognizer):
 
     """
 
-    ENTITIES = ["DATE_TIME", "NRP", "LOCATION", "PERSON", "ORGANIZATION"]
+    ENTITIES = ["NRP", "LOCATION", "PERSON", "ORGANIZATION"]
 
     DEFAULT_EXPLANATION = "Identified as {} by Spacy's Named Entity Recognition"
 
@@ -29,7 +29,6 @@ class SpacyRecognizer(LocalRecognizer):
     CHECK_LABEL_GROUPS = [
         ({"LOCATION"}, {"GPE", "LOC"}),
         ({"PERSON", "PER"}, {"PERSON", "PER"}),
-        ({"DATE_TIME"}, {"DATE", "TIME"}),
         ({"NRP"}, {"NORP"}),
         ({"ORGANIZATION"}, {"ORG"}),
     ]
